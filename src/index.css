@@ -1,14 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Dancing+Script:wght@400..700&family=Diphylleia&family=Faculty+Glyphic&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+AU+SA:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Port+Lligat+Slab&family=Smooch+Sans:wght@100..900&family=Tektur:wght@400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #fff;
+  font-family: "Faculty Glyphic";
 }
 
 body {
-  display: flex;
-  justify-content: center;
   background-image: url(./assets/background.jpg);
   background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 1rem;
+}
+
+nav {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.459);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  border-radius: 10px;
+  border: 1px solid rgba(173, 173, 173, 0.904);
+}
+
+.appCnt {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
@@ -20,8 +47,7 @@ body {
   overflow: hidden;
   padding: 1rem;
   border: 1px solid;
-  margin-top: 2rem;
-  color: #fff;
+  margin: 2rem 0;
 
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.459);
@@ -34,6 +60,7 @@ body {
 .heading {
   width: 100%;
   font-size: 1.8rem;
+  font-weight: normal;
   margin-bottom: 0.8rem;
 }
 
@@ -45,10 +72,6 @@ body {
   width: 100%;
   height: 45px;
   border: 1px solid rgba(173, 173, 173, 0.904);
-
-  * {
-    color: #fff;
-  }
 }
 
 .acceptInput {
@@ -81,6 +104,7 @@ body {
 
 .listItems {
   display: flex;
+  align-items: center;
   margin-top: 0.5rem;
   padding: 0.5rem;
   border-radius: 8px;
@@ -103,6 +127,7 @@ input[type="checkbox"] {
   height: 24px;
   border: 2px solid #ac63ac;
   border-radius: 50%;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -118,7 +143,6 @@ input[type="checkbox"] {
 
 input[type="checkbox"]:checked + .custom-checkbox {
   background: #ac63ac;
-  color: white;
 
   &::after {
     content: "✔";
@@ -133,6 +157,16 @@ input[type="checkbox"]:checked + .custom-checkbox {
 .taskText {
   font-size: 1.2rem;
   margin: 0 0.6rem;
+  line-height: 1.4rem;
+
+  span {
+    opacity: 0.7;
+  }
+}
+
+.firstElement {
+  display: flex;
+  justify-content: center;
 }
 
 .Up_Down_btn,
@@ -140,13 +174,15 @@ input[type="checkbox"]:checked + .custom-checkbox {
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: 0.5rem;
   font-size: 1.5rem;
   font-weight: lighter;
   background-color: transparent;
   border: 1px solid rgba(173, 173, 173, 0.904);
-  color: #fff;
+
   transition: 0.1s ease-in-out;
 
   &:hover {
@@ -160,4 +196,60 @@ input[type="checkbox"]:checked + .custom-checkbox {
   align-items: center;
   line-height: 0;
   transform: rotate(90deg);
+}
+
+.nav_part1 {
+  display: flex;
+  a {
+    text-shadow: 0px 0px 5px black;
+    font-family: "Tektur", sans-serif;
+    text-decoration: none;
+    margin-left: 0.3rem;
+  }
+}
+
+.nav_part2 {
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  svg {
+    height: 35px;
+    fill: white;
+    margin-left: 0.6rem;
+  }
+}
+
+.profilePic {
+  height: 40px;
+  width: 40px;
+  clip-path: circle(50% at 50% 50%);
+  background-color: orange;
+  background-image: url(./assets/profile.png);
+  background-position: center;
+  background-size: cover;
+  margin-left: 0.6rem;
+}
+
+@media (max-width: 425px) {
+  .nav_part1 {
+    display: block;
+
+    a {
+      margin: unset;
+    }
+  }
+
+  .addTaskButton {
+    font-size: 1rem;
+    padding: 0.4rem;
+    width: 110px;
+  }
+
+  .Up_Down_btn,
+  .deleteBtn {
+    border-radius: 5px;
+    height: 30px;
+    width: 30px;
+  }
 }

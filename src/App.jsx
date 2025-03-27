@@ -1,9 +1,13 @@
 import ToDoApp from "./ToDoApp";
+import Nav from "./Navbar";
 
 function App() {
   return (
     <>
-      <ToDoApp />
+      <Nav />
+      <div className="appCnt">
+        <ToDoApp />
+      </div>
     </>
   );
 }
